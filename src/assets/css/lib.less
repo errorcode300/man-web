@@ -1,0 +1,229 @@
+// 公共样式
+*{margin: 0;padding: 0;}
+li{list-style: none;}
+// 统一修改所有表格表头样式
+.el-table th{
+  font-size: 14px;
+}
+// 日期选择器
+div.el-date-editor{
+  .el-input__inner{
+    padding-left: 15px;
+    height: 30px;
+    line-height: 30px;
+  }
+  .el-input__prefix{
+    right: 30px;
+    left: auto;
+    .el-input__icon{
+      position: absolute;
+      background-image: url('../../../static/images/icon_date_editor.png');
+      font-weight: bold;
+      font-size: 16px;
+      color: #fff;
+      width: 30px;
+      &::before{
+        content: '';
+      }
+    }
+  }
+  .el-range__icon{
+    background-image: url('../../../static/images/icon_date_editor.png');
+    font-weight: bold;
+    font-size: 16px;
+    color: #fff;
+    width: 30px;
+    &::before{
+      content: '';
+    }
+  }
+}
+// 图标
+.icon-choose-org{
+  background-image: url('../../../static/images/icon_choose_org.png');
+  background-size: 100% 100%;
+}
+.icon-choose-idx{
+  background-image: url('../../../static/images/icon_choose_idx.png');
+  background-size: 100% 100%;
+}
+.icon-choose-freq{
+  background-image: url('../../../static/images/icon_choose_freq.png');
+  background-size: 100% 100%;
+}
+.icon_user{
+  width: 16px;
+  height: 16px;
+  display: inline-block;
+  margin-right: 8px;
+  background-image: url('../../../static/images/icon_user_o.png');
+  background-size: 100% 100%;
+  &::before{
+    content: ' ';
+  }
+}
+.icon_lock{
+  width: 16px;
+  height: 16px;
+  display: inline-block;
+  margin-right: 8px;
+  background-image: url('../../../static/images/icon_lock_o.png');
+  background-size: 100% 100%;
+  &::before{
+    content: ' ';
+  }
+}
+.icon_exit{
+  width: 16px;
+  height: 16px;
+  display: inline-block;
+  margin-right: 8px;
+  background-image: url('../../../static/images/icon_exit.png');
+  background-size: 100% 100%;
+  &::before{
+    content: ' ';
+  }
+}
+.icon-warn-red{
+  background-image: url('../../../static/images/warn_red.png');
+  background-size: 100% 100%;
+  width: 16px;
+  height: 16px;
+  display: inline-block;
+}
+.icon-warn-orange{
+  background-image: url('../../../static/images/warn_orange.png');
+  background-size: 100% 100%;
+  width: 16px;
+  height: 16px;
+  display: inline-block;
+}
+.icon-warn-blue{
+  background-image: url('../../../static/images/warn_blue.png');
+  background-size: 100% 100%;
+  width: 16px;
+  height: 16px;
+  display: inline-block;
+}
+// 侧边栏图标
+#sideBar{
+  .el-submenu [class^=icon_menu_]{
+    width: 16px;
+    height: 16px;
+    display: inline-block;
+    background-size: 100% 100%;
+    margin: 0 9px 0 4px;
+    &::before{
+      content: ' ';
+    }
+  }
+  .el-menu-item [class^=icon_menu_]{
+    width: 16px;
+    height: 16px;
+    display: inline-block;
+    background-size: 100% 100%;
+    margin: 0 9px 0 4px;
+    &::before{
+      content: ' ';
+    }
+  }
+  .icon_menu_home{
+    background-image: url('../../../static/images/icon_home-o.png');
+  }
+  .icon_menu_capital{
+    background-image: url('../../../static/images/icon_menu_capital.png');
+  }
+  .icon_menu_realEconomy{
+    background-image: url('../../../static/images/icon_menu_realEconomy.png');
+  }
+  .icon_menu_income{
+    background-image: url('../../../static/images/icon_menu_income.png');
+  }
+  .icon_menu_org{
+    background-image: url('../../../static/images/icon_menu_org.png');
+  }
+  .icon_menu_bankAnalysis{
+    background-image: url('../../../static/images/icon_menu_bankAnalysis.png');
+  }
+  .icon_menu_idxSearch{
+    background-image: url('../../../static/images/icon_menu_idxSearch.png');
+  }
+  .icon_menu_user{
+    background-image: url('../../../static/images/icon_menu_user.png');
+  }
+  .icon_menu_list{
+    background-image: url('../../../static/images/icon_menu_list.png');
+  }
+  .el-icon-data-analysis, .el-icon-files{
+    font-weight: bold;
+  }
+}
+.el-menu--vertical{
+  .el-menu-item{
+    .icon_menu_list{
+      width: 16px;
+      height: 16px;
+      display: inline-block;
+      background-size: 100% 100%;
+      margin: 0 9px 0 4px;
+      background-image: url('../../../static/images/icon_menu_list.png');
+      &::before{
+        content: ' ';
+      }
+    }
+  }
+}
+
+// 表格导出
+button.exportBtn{
+  border: none;
+  font-size: 14px;
+  position: absolute;
+  padding: 5px 22px 5px 18px;
+  margin-right: 16px;
+  color: #0B98FF;
+  right: 0;
+  // 关闭hover样式
+  &:focus, &:hover{
+    color: #0B98FF;
+    border-color: #fff;
+    background-color: #fff;
+  }
+  &::before{
+    content: ' ';
+    width: 1px;
+    height: 24px;
+    display: block;
+    background: #BEBEBE;
+    position: absolute;
+    top: 0;
+    left: 0;
+  }
+  .el-icon-download{
+    position: absolute;
+    top: 5px;
+    right: 0;
+    // margin-left: 4px;
+    font-weight: bold;
+    width: 14px;
+    height: 14px;
+    display: inline-block;
+    background-image: url('../../../static/images/icon_download.png');
+    background-size: 100% 100%;
+  }
+  .el-icon-download:before{
+    content: ' ';
+  }
+}
+
+// 表格固定表头
+// .fixedHeader .el-table__header-wrapper{
+//   position: fixed;
+//   top: 136px;
+//   left: 84px;
+//   z-index: 100;
+//   border-top: 1px solid #d0d0d0;
+//   border-left: 1px solid #d0d0d0;
+//   border-top-left-radius: 4px;
+//   border-top-right-radius: 4px;
+// }
