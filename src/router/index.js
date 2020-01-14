@@ -1,6 +1,6 @@
 import Vue from 'vue'
 import Router from 'vue-router'
-// import store from '../vuex/index'
+import store from '../vuex/index'
 import login from '@/components/login'
 import index from '@/components/index'
 import home from '@/pages/home'
@@ -18,6 +18,7 @@ import sysInfo from '@/pages/sysInfo'
 
 Vue.use(Router)
 
+// 创建路由器
 const router = new Router({
   mode: 'hash',
   base: '/man-web/',
@@ -151,6 +152,26 @@ const router = new Router({
       ]
     }
   ]
+})
+
+// tab页路由分配
+router.beforeEach((to, from, next) => {
+  if (to.name === 'login') {
+  } else {
+    store.commit('tabRoute', {
+      to: {
+        name: to.name ? to.name : '',
+        tabName: (to.meta && to.meta.tabName) ? to.meta.tabName : '',
+        path: to.path
+      },
+      from: {
+        name: from.name ? from.name : '',
+        tabName: (from.meta && from.meta.tabName) ? from.meta.tabName : '',
+        path: from.path
+      }
+    })
+  }
+  next()
 })
 
 export default router

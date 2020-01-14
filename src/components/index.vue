@@ -9,9 +9,9 @@
     </el-header>
     <el-main>
       <multi-tab></multi-tab>
-      <!-- <keep-alive :exclude="closingPage">
-        <router-view ref="child"></router-view>
-      </keep-alive> -->
+      <keep-alive :exclude="closingPage">
+        <router-view></router-view>
+      </keep-alive>
     </el-main>
   </el-container>
 </template>
@@ -31,11 +31,13 @@ export default {
   },
   // 组件状态值
   data () {
-
+    return {}
   },
   // 计算属性
   computed: {
-
+    closingPage () {
+      return this.$store.state.closingPage
+    }
   },
   // 侦听器
   watch: {
@@ -117,7 +119,7 @@ export default {
         background-color: F9F9F9;
         text-align: left;
         span{
-          // color: yellow;
+          font-weight: bold;
         }
       }
     }

@@ -252,6 +252,8 @@ export default {
       }
       .el-submenu{
         .el-submenu__title{
+          height: 2.5rem;
+          line-height: 2.2rem;
           text-align: left;
           color: inherit;
           i{

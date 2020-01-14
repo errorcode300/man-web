@@ -59,16 +59,18 @@ const mutations = {
   tabRemove: function (state, name) {
     // 关闭标签
     let tabIndex = state.tabList.findIndex(s => s.name === name)
-    if (name === state.currentPage.name) {
-      // 切换高亮标签
-      let tabIndex = state.tabList.findIndex(s => s.name === name)
-      state.currentPage = (tabIndex !== state.tabList.length - 1) ? state.tabList[tabIndex + 1] : state.tabList[tabIndex - 1]
-      router.push(state.currentPage.path) // 跳转新页面
-    }
     if (tabIndex > -1) {
       // 清理 keep alive
       state.closingPage = state.tabList[tabIndex].name
       state.tabList.splice(tabIndex, 1)
+    }
+    if (name === state.currentPage.name) {
+      // // 切换高亮标签
+      // let tabIndex = state.tabList.findIndex(s => s.name === name)
+      // state.currentPage = (tabIndex !== state.tabList.length - 1) ? state.tabList[tabIndex + 1] : state.tabList[tabIndex - 1]
+      // router.push(state.currentPage.path) // 跳转新页面
+      // 是当前页，返回上一页
+      router.back()
     }
   },
   tabRoute (state, route) {
