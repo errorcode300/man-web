@@ -1,64 +1,37 @@
 <!--
-  描述：多标签页
-  创建日期：2019年10月21日
+  描述：收入结构
+  创建日期：2019年10月18日
   修改日期：
 -->
 <template>
-  <div id="multiTab">
-    <el-tabs v-model="activeTab" type="card" @tab-remove="removeTab" @tab-click="clickTab">
-      <el-tab-pane v-for="tab in tabList" :key="tab.name" :label="tab.tabName" :name="tab.name" :closable="tab.name !== 'home'">
-      </el-tab-pane>
-    </el-tabs>
-   <!-- <el-tabs v-model="activeTab" type="card" @tab-remove="removeTab" @tab-click="clickTab">
-    <el-tab-pane
-     v-for="tab in tabs"
-     :key="tab.name"
-     :label="tab.tabName"
-     :name="tab.name"
-     :closable="tab.name !== 'home'"
-    >
-    </el-tab-pane>
-   </el-tabs> -->
+  <div id="income">
   </div>
 </template>
 
 <script>
+// import scrollEvent from '../utils/scrollEvent'
 export default {
   // 组件名称
-  name: 'multiTab',
+  name: 'income',
   // 组件参数 接收来自父组件的数据
   props: {},
   // 局部注册的组件
   components: {},
   // 组件状态值
   data () {
-    return {
-      activeTab: 'home'
-    }
+
   },
   // 计算属性
   computed: {
-    tabList () { // tab列表
-      return this.$store.state.tabList
-    }
+
   },
   // 侦听器
   watch: {
-    // 监听store的值, 获取当前页面
-    '$store.state.currentPage' (tab) {
-      this.activeTab = tab.name
-    }
+
   },
   // 组件方法
   methods: {
-    clickTab (tab) {
-      if (tab.name !== this.$store.state.currentPage.name) {
-        this.$router.push(this.tabList[1 * tab.index].path)
-      }
-    },
-    removeTab (name) {
-      this.$store.commit('tabRemove', name)
-    }
+
   },
   // 以下是生命周期钩子
   /**
@@ -70,10 +43,7 @@ export default {
   * 组件实例创建完成，属性已绑定，但DOM还未生成，el属性还不存在
   */
   created () {
-    // 初始化获取当前tab页
-    setTimeout(() => {
-      this.activeTab = this.$store.state.currentPage.name ? this.$store.state.currentPage.name : ''
-    }, 500)
+
   },
   /**
   * 在挂载开始之前被调用：相关的 render 函数首次被调用。
@@ -85,6 +55,7 @@ export default {
   * 如果 root 实例挂载了一个文档内元素，当 mounted 被调用时 vm.el 也在文档内。
   */
   mounted () {
+
   },
   /**
   * 数据更新时调用，发生在虚拟 DOM 重新渲染和打补丁之前。
@@ -127,29 +98,5 @@ export default {
 <!--然而子组件的根节点元素会同时被设置了scoped的父css样式和设置了scoped的子css样式影响，-->
 <!--这么设计的目的是父组件可以对子组件根元素进行布局。-->
 <style lang="less" scoped>
-@deep: ~'>>>';
-#multiTab{
-  background-color: #555;
-  @{deep} .el-tabs__header{
-    margin-bottom: 0;
-    .el-tabs__nav{
-      border: none;
-    }
-    .el-tabs__item{
-      border-bottom: none;
-      height: 36px;
-      line-height: 36px;
-      border-left: 2px solid #F2F2F2;
-      &:first-child{
-        border-left: none;
-      }
-      &:last-child{
-        border-right: 2px solid #F2F2F2;
-      }
-      .el-icon-close{
-        margin-left: 0;
-      }
-    }
-  }
-}
+
 </style>

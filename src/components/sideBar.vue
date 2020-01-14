@@ -76,7 +76,33 @@ export default {
           id: 5,
           text: '工作信息管理',
           url: '/index/workinfo',
-          icon: 'icon_menu_home'
+          icon: 'icon_menu_home',
+          list: [
+            {
+              id: 11,
+              text: '工作流程管理',
+              url: '/index/workingProcess',
+              icon: 'icon_menu_list'
+            },
+            {
+              id: 12,
+              text: '需求信息管理',
+              url: '/index/requireInfo',
+              icon: 'icon_menu_list'
+            },
+            {
+              id: 13,
+              text: '生产问题管理',
+              url: '/index/prodProblem',
+              icon: 'icon_menu_list'
+            },
+            {
+              id: 14,
+              text: '工作记录管理',
+              url: '/index/workRecore',
+              icon: 'icon_menu_list'
+            }
+          ]
         },
         {
           id: 6,
@@ -195,8 +221,8 @@ export default {
   #sideBar{
     // height: 10%;
     background-color: rgb(37, 131, 98);
-    width: 72%;
-    min-width: 720px;
+    width: 80%;
+    min-width: 800px;
     margin: 0 auto;
     // @{deep} .el-menu{
     //   height: 100%;

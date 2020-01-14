@@ -3,14 +3,18 @@ import Router from 'vue-router'
 // import store from '../vuex/index'
 import login from '@/components/login'
 import index from '@/components/index'
-import home from '@/components/home'
-import workPlat from '@/components/workPlat'
-import baseInfo from '@/components/baseInfo'
-import viewInfo from '@/components/viewInfo'
-import clockInfo from '@/components/clockInfo'
-import workInfo from '@/components/workInfo'
-import clockInfoSel from '@/components/clockInfoSel'
-import sysInfo from '@/components/sysInfo'
+import home from '@/pages/home'
+import workPlat from '@/pages/workPlat'
+import baseInfo from '@/pages/baseInfo'
+import viewInfo from '@/pages/viewInfo'
+import clockInfo from '@/pages/clockInfo'
+import workInfo from '@/pages/workInfo'
+import workingProcess from '@/pages/workInfo/workingProcess'
+import requireInfo from '@/pages/workInfo/requireInfo'
+import prodProblem from '@/pages/workInfo/prodProblem'
+import workRecore from '@/pages/workInfo/workRecore'
+import clockInfoSel from '@/pages/clockInfoSel'
+import sysInfo from '@/pages/sysInfo'
 
 Vue.use(Router)
 
@@ -87,6 +91,42 @@ const router = new Router({
           component: workInfo,
           meta: {
             tabName: '工作信息管理',
+            requiresAuth: true
+          }
+        },
+        {
+          path: 'workingProcess',
+          name: 'workingProcess',
+          component: workingProcess,
+          meta: {
+            tabName: '工作流程管理',
+            requiresAuth: true
+          }
+        },
+        {
+          path: 'requireInfo',
+          name: 'requireInfo',
+          component: requireInfo,
+          meta: {
+            tabName: '需求信息管理',
+            requiresAuth: true
+          }
+        },
+        {
+          path: 'prodProblem',
+          name: 'prodProblem',
+          component: prodProblem,
+          meta: {
+            tabName: '生产问题管理',
+            requiresAuth: true
+          }
+        },
+        {
+          path: 'workRecore',
+          name: 'workRecore',
+          component: workRecore,
+          meta: {
+            tabName: '工作记录管理',
             requiresAuth: true
           }
         },

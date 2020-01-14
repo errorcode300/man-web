@@ -1,34 +1,17 @@
 <template>
-  <el-container id="index">
-    <el-header height="auto">
-      <div><span>欢迎您</span></div>
-      <div class="i-logo" title="项目管理平台">
-        <span>项目管理平台</span>
-      </div>
-      <el-aside width="200"><side-bar></side-bar></el-aside>
-    </el-header>
-    <el-main>
-      <multi-tab></multi-tab>
-      <!-- <keep-alive :exclude="closingPage">
-        <router-view ref="child"></router-view>
-      </keep-alive> -->
-    </el-main>
-  </el-container>
+  <div id="home" class="hello">
+    <p>这里是home</p>
+  </div>
 </template>
 
 <script>
-import sideBar from '../components/sideBar'
-import multiTab from '../components/multiTab'
 export default {
   // 组件名称
-  name: 'index',
+  name: 'home',
   // 组件参数 接收来自父组件的数据
   props: {},
   // 局部注册的组件
-  components: {
-    sideBar,
-    multiTab
-  },
+  components: {},
   // 组件状态值
   data () {
 
@@ -106,20 +89,19 @@ export default {
 </script>
 
 <!-- Add "scoped" attribute to limit CSS to this component only -->
-<!--使用了scoped属性之后，父组件的style样式将不会渗透到子组件中，-->
-<!--然而子组件的根节点元素会同时被设置了scoped的父css样式和设置了scoped的子css样式影响，-->
-<!--这么设计的目的是父组件可以对子组件根元素进行布局。-->
-<style lang="less" scoped>
-  #index{
-    background-color: F9F9F9;
-    header{
-      .i-logo{
-        background-color: F9F9F9;
-        text-align: left;
-        span{
-          // color: yellow;
-        }
-      }
-    }
-  }
+<style scoped>
+h1, h2 {
+  font-weight: normal;
+}
+ul {
+  list-style-type: none;
+  padding: 0;
+}
+li {
+  display: inline-block;
+  margin: 0 10px;
+}
+a {
+  color: #42b983;
+}
 </style>
