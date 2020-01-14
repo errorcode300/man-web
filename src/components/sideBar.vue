@@ -112,7 +112,7 @@ export default {
         },
         {
           id: 7,
-          text: '工作信息管理',
+          text: '系统管理',
           url: '/index/sysInfo',
           icon: 'icon_menu_home'
         }
@@ -219,18 +219,15 @@ export default {
 <style lang="less" scoped>
 @deep: ~'>>>';
   #sideBar{
-    // height: 10%;
-    background-color: rgb(37, 131, 98);
-    width: 80%;
-    min-width: 800px;
-    margin: 0 auto;
+    text-align: right;
+    padding-left: 25%;
+    padding-right: 15%;
     // @{deep} .el-menu{
     //   height: 100%;
     // }
     @{deep} .el-menu{
-      text-align: left;
-      color: #fff;
-      border-right: none;
+      float:left;
+      border: 0;
       &>i{
         margin-left: 25px;
         margin-bottom: 10px;
@@ -239,6 +236,7 @@ export default {
         height: 2.5rem;
         line-height: 2.2rem;
         color: inherit;
+        padding: 0 10px;
         i{
           color: inherit;
         }
@@ -246,7 +244,7 @@ export default {
           background: #222532;
         }
         &.is-active:focus, &.is-active:hover{
-          background: linear-gradient(to right, rgba(64,112,243,1) 0%, rgba(11,153,255,1) 100%);
+          background: linear-gradient(to right, rgb(21, 32, 185) 0%, rgb(127, 189, 224) 100%);
           border: 0;
         }
       }
@@ -254,16 +252,18 @@ export default {
         .el-submenu__title{
           height: 2.5rem;
           line-height: 2.2rem;
-          text-align: left;
           color: inherit;
+          padding: 0 10px;
+          border: 0;
           i{
+            display: none;
             color: inherit;
           }
           &:focus, &:hover{
             background: #222532;
           }
           &.is-active:focus, &.is-active:hover{
-            background: linear-gradient(to right, rgba(64,112,243,1) 0%, rgba(11,153,255,1) 100%);
+            background: linear-gradient(to right, rgb(199, 204, 216) 0%, rgb(168, 196, 216) 100%);
             border: 0;
           }
         }
@@ -279,7 +279,7 @@ export default {
     }
   }
   .el-menu-item.is-active{
-    background: linear-gradient(to right, rgba(64,112,243,1) 0%, rgba(11,153,255,1) 100%);
+    // background: linear-gradient(to right, rgb(27, 110, 78) 0%, rgb(56, 164, 190) 100%);
     border: 0;
   }
 </style>

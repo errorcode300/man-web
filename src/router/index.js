@@ -145,7 +145,7 @@ const router = new Router({
           name: 'sysInfo',
           component: sysInfo,
           meta: {
-            tabName: '工作信息管理',
+            tabName: '系统管理',
             requiresAuth: true
           }
         }

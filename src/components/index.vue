@@ -113,15 +113,18 @@ export default {
 <!--这么设计的目的是父组件可以对子组件根元素进行布局。-->
 <style lang="less" scoped>
   #index{
-    background-color: F9F9F9;
     header{
+      background-color: #F9F9F9;
+      border-bottom: 1px solid rgb(21, 32, 185);
       .i-logo{
-        background-color: F9F9F9;
         text-align: left;
         span{
           font-weight: bold;
         }
       }
+    }
+    main{
+      padding: 0;
     }
   }
 </style>

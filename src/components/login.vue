@@ -16,7 +16,7 @@
         </el-form-item>
       </el-form>
     </div>
-    <el-button type="primary" size="small" @click="onSubmit">登录</el-button>
+    <el-button type="primary" size="small" @click="doSubmit">登录</el-button>
   </div>
 </template>
 
@@ -67,11 +67,12 @@ export default {
           that.$message.error('获取平台名称和标识请求失败')
         })
     },
-    onSubmit: function () {
+    doSubmit: function () {
       let that = this
       // 先不进行接口通配，直接跳转页面
-      sessionStorage.setItem('userInfo', {'userNo': 'admin1', 'isadmin': 'Y', 'orgNo': 'F031H101310101001', 'userId': '1eedba6abc244542af02687bcce805c3', 'userNm': 'test1', 'userPwd': null}) // 存储用户信息
+      sessionStorage.setItem('userInfo', JSON.stringify({'userNo': '201', 'isadmin': 'Y', 'orgNo': 'F031H101310101001', 'userId': '1eedba6abc244542af02687bcce805c3', 'userNm': 'test1', 'userPwd': '123456'})) // 存储用户信息
       // that.$store.commit('getUserInfo')
+      console.log('userInfo>>>' + sessionStorage.getItem('userInfo'))
       that.$router.push('/index/home') // 跳转首页
       // 用户登录接口
       /*
@@ -144,7 +145,7 @@ export default {
         (e.code === 'Enter' || e.code === 'enter')
       ) {
         // 验证在登录界面和按得键是回车键enter
-        that.onSubmit() // 登录函数
+        that.doSubmit() // 登录函数
       }
     }
   },

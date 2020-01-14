@@ -129,26 +129,28 @@ export default {
 <style lang="less" scoped>
 @deep: ~'>>>';
 #multiTab{
-  background-color: #555;
   @{deep} .el-tabs__header{
-    margin-bottom: 0;
+    margin: 0;
+    margin-top: 5px;
+    border-bottom: 1px solid rgb(21, 32, 185);
     .el-tabs__nav{
       border: none;
     }
     .el-tabs__item{
+      margin-left: 5px;
+      border: 1px solid #aaa;
       border-bottom: none;
-      height: 36px;
-      line-height: 36px;
-      border-left: 2px solid #F2F2F2;
-      &:first-child{
-        border-left: none;
-      }
-      &:last-child{
-        border-right: 2px solid #F2F2F2;
-      }
-      .el-icon-close{
-        margin-left: 0;
-      }
+      height: 1.5rem;
+      line-height: 1.5rem;
+      // &:first-child{
+      //   border-left: none;
+      // }
+      // &:last-child{
+      //   border-right: 2px solid #F2F2F2;
+      // }
+      // .el-icon-close{
+      //   margin-left: 0;
+      // }
     }
   }
 }
