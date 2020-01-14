@@ -1,23 +1,22 @@
-/* eslint-disable no-undef */
 <template>
   <div class="login">
-    <h1>{{ msg }}</h1>
+    <p>{{ msg }}</p>
     <div class="l-box">
       <el-form ref="form" :model="form">
         <el-form-item>
-          <el-input size="small" v-model="form.username" placeholder="请输入账户信息">
+          <el-input size="small" v-model="form.username" placeholder="请输入工号" prefix-icon="el-icon-user">
             <span slot="prefix" class="inUsernm"></span>
           </el-input>
-          <el-input size="small" type="password" v-model="form.password" placeholder="请输入账户密码">
+          <el-input size="small" type="password" v-model="form.password" placeholder="请输入密码" prefix-icon="el-icon-lock">
             <span slot="prefix" class="inPwd"></span>
           </el-input>
           <span>
             <el-checkbox v-model="isRemember">记住密码</el-checkbox>
           </span>
-          <el-button type="primary" size="small" @click="onSubmit">登录</el-button>
         </el-form-item>
       </el-form>
     </div>
+    <el-button type="primary" size="small" @click="onSubmit">登录</el-button>
   </div>
 </template>
 
@@ -29,7 +28,7 @@ export default {
     return {
       logicSysNo: '',
       logicSysNm: '',
-      msg: 'Welcome to login Vue.js App',
+      msg: '项目管理平台',
       form: {
         username: '',
         password: ''
@@ -70,7 +69,12 @@ export default {
     },
     onSubmit: function () {
       let that = this
+      // 先不进行接口通配，直接跳转页面
+      sessionStorage.setItem('userInfo', {'userNo': 'admin1', 'isadmin': 'Y', 'orgNo': 'F031H101310101001', 'userId': '1eedba6abc244542af02687bcce805c3', 'userNm': 'test1', 'userPwd': null}) // 存储用户信息
+      // that.$store.commit('getUserInfo')
+      that.$router.push('/index/home') // 跳转首页
       // 用户登录接口
+      /*
       login
         .login({
           username: this.form.username,
@@ -98,7 +102,7 @@ export default {
         .catch(function (err) {
           console.log(err)
           that.$message.error('请求失败')
-        })
+        }) */
     },
     // 设置cookie
     setCookie: function (userName, userPwd, exdays) {
@@ -145,8 +149,8 @@ export default {
     }
   },
   mounted () {
-    this.test() // test接口能否走通
-    this.getCookie() // 获取cookie
+    // this.test() // test接口能否走通
+    // this.getCookie() // 获取cookie
     this.isRemember = localStorage.getItem('isRemember') === 'true' // 获取是否记住密码
     // this.$refs.loginPage.style.height = document.documentElement.clientHeight + 'px'
     // console.log(this.$refs.loginPage.style.height)
@@ -156,11 +160,27 @@ export default {
 
 <!-- Add "scoped" attribute to limit CSS to this component only -->
 <style scoped lang="less">
+@deep: ~'>>>';
 .login {
-  color: red;
+  width: 25%;
+  min-width: 250px;
   font-size: 0.45rem;
-  h1 {
-    color: blue;
+  margin: 10% auto;
+  p {
+    color:#0043A2;
+    font-size: 1.935rem; // 30px
   }
+  // .l-box{
+  //   form{
+  //     @{deep} .el-form-item{
+  //       .inUsernm {
+  //         width: 100%;height:100%;display: inline-block;background-image: url("../../static/images/icon_user.png");background-size: 100% 100%;
+  //       }
+  //       .inPwd {
+  //         width: 100%;height:100%;display: inline-block;background-image: url("../../static/images/icon_lock.png");background-size: 100% 100%;
+  //       }
+  //     }
+  //   }
+  // }
 }
 </style>
