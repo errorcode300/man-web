@@ -1,7 +1,9 @@
 <template>
   <el-container id="index">
     <el-header height="auto">
-      <div><span>欢迎您</span></div>
+      <div class="i-headerBar">
+        <span>{{ msg }}</span>
+      </div>
       <div class="i-logo" title="项目管理平台">
         <span>项目管理平台</span>
       </div>
@@ -31,7 +33,12 @@ export default {
   },
   // 组件状态值
   data () {
-    return {}
+    // 模块字面量之制造替换位
+    let userName = JSON.parse(sessionStorage.getItem('userInfo')).userNm
+    let msg = `欢迎您，${userName}`
+    return {
+      msg
+    }
   },
   // 计算属性
   computed: {
@@ -116,6 +123,17 @@ export default {
     header{
       background-color: #F9F9F9;
       border-bottom: 1px solid rgb(21, 32, 185);
+      .i-headerBar{
+        display: block;
+        height: 25px;
+        line-height: 25px;
+        background-color: transparent;
+        span{
+          float: right;
+          font-size: 0.75rem;
+          font-weight: bold;
+        }
+      }
       .i-logo{
         text-align: left;
         span{

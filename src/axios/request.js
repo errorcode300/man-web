@@ -31,7 +31,7 @@ export function get (url, params = {}) {
 /*
  *  post请求
  *  url:请求地址
- *  params:参数
+ *  params:参数,默认为new Date()
  * */
 export function post (url, params = {}) {
   return new Promise((resolve, reject) => {
