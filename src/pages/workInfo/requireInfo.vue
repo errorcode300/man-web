@@ -191,14 +191,14 @@
       </el-table-column>
     </el-table>
     <div class="tableFooter">
-      <el-button size="mini" @click="toggleSelection()">取消选择</el-button>
+      <el-button size="small" @click="toggleSelection()">取消选择</el-button>
       <div class="block">
         <el-pagination
           @size-change="handleSizeChange"
           @current-change="handleCurrentChange"
           :current-page="currentPage"
-          :page-sizes="[100, 200, 300, 400]"
-          :page-size="100"
+          :page-sizes="[20, 50, 200, 500]"
+          :page-size="pageSize"
           layout="total, sizes, prev, pager, next, jumper"
           :total="pageTotal">
         </el-pagination>
@@ -591,8 +591,9 @@ export default {
         isOverDate: '普陀区'
       }],
       // 分页相关变量
-      pageTotal: 400,
-      currentPage: 4
+      pageSize: 20,
+      pageTotal: 500,
+      currentPage: 1
     }
   },
   // 计算属性
@@ -776,7 +777,7 @@ export default {
       float: left;
     }
     .block{
-      float: right;
+      float: left;
     }
   }
 }
