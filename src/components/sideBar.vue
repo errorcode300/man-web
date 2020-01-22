@@ -220,8 +220,7 @@ export default {
 @deep: ~'>>>';
   #sideBar{
     text-align: right;
-    padding-left: 25%;
-    padding-right: 15%;
+    padding-left: 22%;
     // @{deep} .el-menu{
     //   height: 100%;
     // }
