@@ -682,9 +682,16 @@ export default {
     // 分页相关方法
     handleSizeChange (val) {
       console.log(`每页 ${val} 条`)
+      this.pageSize = val
+      this.getPageTableData(val, this.currentPage)
     },
     handleCurrentChange (val) {
       console.log(`当前页: ${val}`)
+      this.getPageTableData(this.pageSize, val)
+    },
+    // 分页表格的接口方法
+    getPageTableData (pageSize, currentPage) {
+      return null
     }
   },
   // 以下是生命周期钩子
